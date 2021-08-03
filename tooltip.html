@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tooltip Component and CSS/ShadowDOM examples</title>
     <script src="./js/tooltip.js"></script>
-    <script src="./js/confirm-link.js"></script>
     <style>
         * {
             box-sizing: border-box;
@@ -36,60 +35,66 @@
     </div>
 
     <p>
-        <h5>Example 1
-        </h5>
-        <my-tooltip text="When you use slots, the styling of the light DOM applies to the content in the slot NOT the shadow DOM styling">
-            <span class="highlight">Slotted content can be styled from light DOM because it is not technically part of
-                shadow DOM</span>
-        </my-tooltip> 
+    <h5>Example 1
+    </h5>
+    <my-tooltip
+        text="When you use slots, the styling of the light DOM applies to the content in the slot NOT the shadow DOM styling">
+        <span class="highlight">Slotted content can be styled from light DOM because it is not technically part of
+            shadow DOM</span>
+    </my-tooltip>
     </p>
 
     <p>
-        <h5>Example 2
-        </h5>
-        <my-tooltip text="::slotted to style slotted content inside shadow DOM. If there is a conflict, the light DOM wins. IMPORTANT: cannot access children this way!">
-            <span class="slotted-highlight">This is an example of ::slotted</span>
-        </my-tooltip>
+    <h5>Example 2
+    </h5>
+    <my-tooltip
+        text="::slotted to style slotted content inside shadow DOM. If there is a conflict, the light DOM wins. IMPORTANT: cannot access children this way!">
+        <span class="slotted-highlight">This is an example of ::slotted</span>
+    </my-tooltip>
     </p>
 
     <p>
-        <h5>Example 3
-        </h5>
-        <my-tooltip text=":host allows you to style the entire web component from inside the shadow dom. If there is a conflict, the light DOM wins.">
-            <span>This is an example of :host</span>
-        </my-tooltip>
+    <h5>Example 3
+    </h5>
+    <my-tooltip
+        text=":host allows you to style the entire web component from inside the shadow dom. If there is a conflict, the light DOM wins.">
+        <span>This is an example of :host</span>
+    </my-tooltip>
     </p>
 
     <p>
-        <h5>Note: you cannot style HTML elements within your component from the light DOM. You CAN select overall styling for the component (with the name or a class or ID), but cannot select elements INSIDE.
-        </h5>
+    <h5>Note: you cannot style HTML elements within your component from the light DOM. You CAN select overall styling
+        for the component (with the name or a class or ID), but cannot select elements INSIDE.
+    </h5>
     </p>
 
     <p>
-        <h5>Example 4
-        </h5>
-        <my-tooltip class="conditional-rendering" text="conditional styling. use :host(conditions). Can use attribute selector, id selector, anything in CONDITIONS
+    <h5>Example 4
+    </h5>
+    <my-tooltip class="conditional-rendering" text="conditional styling. use :host(conditions). Can use attribute selector, id selector, anything in CONDITIONS
     </h5>">
-            <span>This is an example of conditional rendering</span>
-        </my-tooltip>
+        <span>This is an example of conditional rendering</span>
+    </my-tooltip>
     </p>
 
     <p>
-        <h5>Example 5
-        </h5>
-        <div class="host-context">
-            <my-tooltip text="render certain styling based on parent tag for custom element using :host-context(selector). Selector can be anything. MUST BE THE FIRST CHILD unless only children are other web components of same type">
-                <span>This is an example of conditional rendering based on host:context</span>
-            </my-tooltip>
-        </div>
+    <h5>Example 5
+    </h5>
+    <div class="host-context">
+        <my-tooltip
+            text="render certain styling based on parent tag for custom element using :host-context(selector). Selector can be anything. MUST BE THE FIRST CHILD unless only children are other web components of same type">
+            <span>This is an example of conditional rendering based on host:context</span>
+        </my-tooltip>
+    </div>
     </p>
 
     <p>
-        <h5>Example 6
-        </h5>
-        <my-tooltip class="variable-ex" text="define CSS variables in light dom that are then accessed within shadow DOM. you can define default color with var(variable-name, default)">
-            <span>Using variable defined in light DOM in shadow DOM!</span>
-        </my-tooltip>
+    <h5>Example 6
+    </h5>
+    <my-tooltip class="variable-ex"
+        text="define CSS variables in light dom that are then accessed within shadow DOM. you can define default color with var(variable-name, default)">
+        <span>Using variable defined in light DOM in shadow DOM!</span>
+    </my-tooltip>
     </p>
 </body>
 
